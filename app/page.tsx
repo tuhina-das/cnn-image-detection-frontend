@@ -56,7 +56,7 @@ export default function Home() {
 
   async function compareImageToUploaded(scrapedImageUrls: string[]) {
     const res = await fetch(
-      "http://cnn-backend-oixx.onrender.com//api/compare",
+      "http://cnn-backend-oixx.onrender.com/api/compare",
       {
         method: "POST",
         headers: {
@@ -86,16 +86,13 @@ export default function Home() {
       first_img_base64.indexOf("base64,") + 7
     );
 
-    const res = await fetch(
-      "http://cnn-backend-oixx.onrender.com//api/scrape",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ tags }),
-      }
-    );
+    const res = await fetch("http://cnn-backend-oixx.onrender.com/api/scrape", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tags }),
+    });
 
     const data = await res.json();
 
