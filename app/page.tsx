@@ -7,8 +7,22 @@ import { FaImage, FaTags, FaArrowUp, FaTimes } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
 
 export default function Home() {
-  // constant for explicitly typing FaImage
-  const Icon = FaImage as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+  // Constant for explicitly typing React Icons
+  const ImageIcon = FaImage as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
+  const TagsIcon = FaImage as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
+  const ArrowUpIcon = FaImage as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
+  const TimesIcon = FaImage as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
+  const SpinnerIcon = FaImage as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
 
   // For loading animation
   const [isLoading, setIsLoading] = useState(false);
@@ -105,7 +119,7 @@ export default function Home() {
           <div className="flex flex-row gap-4 p-5 bg-white w-[50vw] min-h-[50vh] mx-auto mt-6 mb-10 rounded md shadow-sm">
             <div className="w-1/2">
               <h2 className="text-xl text-black font-semibold mb-2 text-center flex items-center justify-center gap-2">
-                <Icon className="text-black" />
+                <ImageIcon className="text-black" />
                 Image Preview
               </h2>
               <div className="p-4 border-2 border-dashed border-gray-300 rounded-lg min-h-[40vh] mb-[2vh]">
@@ -148,7 +162,7 @@ export default function Home() {
                   fileInputRef.current?.click();
                 }}
               >
-                <FaArrowUp className="mr-2 inline text-white" />
+                <ArrowUpIcon className="mr-2 inline text-white" />
                 {isUploading ? "Uploading..." : "Upload Image"}
               </button>
             </div>
@@ -156,7 +170,7 @@ export default function Home() {
             {/* Tags Section */}
             <div className="w-1/2">
               <h2 className="text-xl text-black font-semibold mb-2 text-center flex items-center justify-center gap-2">
-                <FaTags className="text-black" /> Tags
+                <TagsIcon className="text-black" /> Tags
               </h2>
               <div className="p-4 border-2 border-gray-300 rounded-lg min-h-[40vh]">
                 <div className="h-full flex flex-col items-center justify-start text-gray-500">
@@ -179,7 +193,7 @@ export default function Home() {
                           className="ml-2 text-blue-500 hover:text-blue-700"
                           onClick={() => handleRemoveTag(tag)}
                         >
-                          <FaTimes />
+                          <TimesIcon />
                         </button>
                       </div>
                     ))}
@@ -192,7 +206,7 @@ export default function Home() {
 
         {isLoading && (
           <div className="flex justify-center items-center mb-4">
-            <FaSpinner className="animate-spin text-blue-500 text-3xl" />
+            <SpinnerIcon className="animate-spin text-blue-500 text-3xl" />
           </div>
         )}
         <button
