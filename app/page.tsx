@@ -7,6 +7,9 @@ import { FaImage, FaTags, FaArrowUp, FaTimes } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
 
 export default function Home() {
+  // constant for explicitly typing FaImage
+  const Icon = FaImage as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+
   // For loading animation
   const [isLoading, setIsLoading] = useState(false);
 
@@ -102,7 +105,8 @@ export default function Home() {
           <div className="flex flex-row gap-4 p-5 bg-white w-[50vw] min-h-[50vh] mx-auto mt-6 mb-10 rounded md shadow-sm">
             <div className="w-1/2">
               <h2 className="text-xl text-black font-semibold mb-2 text-center flex items-center justify-center gap-2">
-                <FaImage className="text-black" /> Image Preview
+                <Icon className="text-black" />
+                Image Preview
               </h2>
               <div className="p-4 border-2 border-dashed border-gray-300 rounded-lg min-h-[40vh] mb-[2vh]">
                 <div className="h-full flex items-center justify-center text-gray-500">
